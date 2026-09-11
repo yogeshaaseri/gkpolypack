@@ -25,7 +25,6 @@
 </head>
 <style>
     body {
-
         margin: 0;
         padding: 0;
     }
@@ -58,15 +57,6 @@
         position: relative;
         overflow: hidden;
     }
-    /* .stats-banner::before {
-        content: "";
-        position: absolute;
-        top: -60px; right: -60px;
-        width: 220px; height: 220px;
-        border-radius: 50%;
-        background: rgba(196, 148, 40, 0.08);
-        pointer-events: none;
-    } */
     .stats-banner__inner {
         display: flex;
         justify-content: space-around;
@@ -151,17 +141,48 @@
     .site-header.scrolled {
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
     }
+    .sa-fade-up, .sa-fade-left, .sa-fade-right, .sa-zoom-in {
+        opacity: 0;
+        transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1), 
+                    transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+        backface-visibility: hidden;
+    }
+    .sa-fade-up    { transform: translateY(35px); }
+    .sa-fade-left  { transform: translateX(-40px); }
+    .sa-fade-right { transform: translateX(40px); }
+    .sa-zoom-in    { transform: scale(0.95); }
+    .sa-fade-up.sa-active,
+    .sa-fade-left.sa-active,
+    .sa-fade-right.sa-active {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    .sa-zoom-in.sa-active {
+        opacity: 1;
+        transform: scale(1);
+    }
+    .sa-delay-1 { transition-delay: 0.12s; }
+    .sa-delay-2 { transition-delay: 0.24s; }
+    .sa-delay-3 { transition-delay: 0.36s; }
+    .sa-delay-4 { transition-delay: 0.48s; }
+    .sa-delay-5 { transition-delay: 0.60s; }
+    .sa-delay-6  { transition-delay: 0.72s; }
+    .sa-delay-7  { transition-delay: 0.84s; }
+    .sa-delay-8  { transition-delay: 0.96s; }
+    .sa-delay-9  { transition-delay: 1.08s; }
+    .sa-delay-10 { transition-delay: 1.20s; }
 </style>
 <body class="home page-template-default page page-id-2">
 
-<header class=" container relative z-50 font-sans">
+<header class="container relative z-50 font-sans">
     <div class="bg-white border-b border-gray-100">
-        <div class=" py-6 flex justify-between items-center">
-            <a href="<?=base_url() ?>" class="flex items-center shrink-0">
+        <div class="py-6 flex justify-between items-center">
+            <a href="<?=base_url() ?>" class="flex items-center shrink-0 sa-fade-left sa-delay-1">
                 <img src="<?=base_url() ?>assets/images/logo.png" alt="GK POLYPACK" class="h-28 lg:h-32 w-auto object-contain">
             </a>
             <div class="hidden lg:flex items-center space-x-10 xl:space-x-16">
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-4 sa-fade-up sa-delay-2">
                     <div class="text-[#d19220]">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
@@ -171,7 +192,7 @@
                         <a href="tel:+919316916847" class="text-xl font-bold text-gray-800 hover:text-[#d19220] transition">+91 9316916847</a>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-4 sa-fade-up sa-delay-3">
                     <div class="text-[#d19220]">
                         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                     </div>
@@ -181,25 +202,23 @@
                         <a href="tel:+919592696910" class="text-xl font-bold text-gray-800 hover:text-[#d19220] transition">+91 9592696910</a>
                     </div>
                 </div>
-                <a href="#" class="bg-[#d19220] hover:bg-[#b87c1a] text-white px-10 py-4 rounded-md text-xl font-bold shadow-md transition transform hover:-translate-y-0.5 whitespace-nowrap">
+                <a href="#" class="bg-[#d19220] hover:bg-[#b87c1a] text-white px-10 py-4 rounded-md text-xl font-bold shadow-md transition transform hover:-translate-y-0.5 whitespace-nowrap sa-fade-right sa-delay-4">
                     Get A Quote
                 </a>
             </div>
-            <button class="lg:hidden text-gray-600 hover:text-[#ff4b3a]">
+            <button class="lg:hidden text-gray-600 hover:text-[#ff4b3a] sa-fade-right sa-delay-1">
                 <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
     </div>
-    <div class=" relative z-40 overlap-nav hidden lg:block">
+    <div class="relative z-40 overlap-nav hidden lg:block sa-fade-up sa-delay-2">
         <nav class="bg-[#0b2644] rounded-lg shadow-xl flex justify-between items-center px-12 py-6">
-           <!-- Main Navigation Links & Dropdowns -->
             <ul class="flex items-center space-x-16 text-xl font-bold text-white m-0 p-0 list-none">
                 <li class="nav-item relative group list-none">
                     <a href="#" class="flex items-center text-[#cc8d1d] py-2 transition">
                         Products
                         <svg class="w-7 h-7 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
                     </a>
-                    <!-- Dropdown Links Hover color change to #cc8d1d -->
                     <ul class="dropdown-menu absolute left-0 top-full mt-4 w-max bg-white rounded-md shadow-2xl border border-gray-100 py-4 list-none p-0 m-0 z-50">
                         <li class="list-none"><a href="#" class="block px-8 py-4 text-xl font-bold text-gray-700 hover:bg-gray-50 hover:text-[#cc8d1d] transition">Compostable Bags</a></li>
                         <li class="list-none"><a href="#" class="block px-8 py-4 text-xl font-bold text-gray-700 hover:bg-gray-50 hover:text-[#cc8d1d] transition">GRS/RCS Certified Bags</a></li>
@@ -208,14 +227,11 @@
                     </ul>
                 </li>
 
-                <!-- More Products with Bada Dropdown -->
                 <li class="nav-item relative group list-none">
-                    <!-- Hover color change to #cc8d1d -->
                     <a href="#" class="flex items-center hover:text-[#cc8d1d] py-2 transition">
                         More Products
                         <svg class="w-7 h-7 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
                     </a>
-                    <!-- Dropdown Links Hover color change to #cc8d1d -->
                     <ul class="dropdown-menu absolute left-0 top-full mt-4 w-max bg-white rounded-md shadow-2xl border border-gray-100 py-4 list-none p-0 m-0 z-50">
                         <li class="list-none"><a href="#" class="block px-8 py-4 text-xl font-bold text-gray-700 hover:bg-gray-50 hover:text-[#cc8d1d] transition">Laminated Bags</a></li>
                         <li class="list-none"><a href="#" class="block px-8 py-4 text-xl font-bold text-gray-700 hover:bg-gray-50 hover:text-[#cc8d1d] transition">Zipper Bags</a></li>
@@ -224,15 +240,12 @@
                     </ul>
                 </li>
 
-                <!-- Industries with Bada Dropdown -->
                 <li class="nav-item relative group list-none">
-                    <!-- Hover color change to #cc8d1d -->
                     <a href="#" class="flex items-center hover:text-[#cc8d1d] py-2 transition">
                         Industries
                         <svg class="w-7 h-7 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
                     </a>
-                    <!-- Dropdown Links Hover color change to #cc8d1d -->       
-                    <ul class="dropdown-menu absolute left-0 top-full mt-4 w-max  bg-white rounded-md shadow-2xl border border-gray-100 py-4 list-none p-0 m-0 z-50">
+                    <ul class="dropdown-menu absolute left-0 top-full mt-4 w-max bg-white rounded-md shadow-2xl border border-gray-100 py-4 list-none p-0 m-0 z-50">
                         <li class="list-none"><a href="#" class="block px-8 py-4 text-xl font-bold text-gray-700 hover:bg-gray-50 hover:text-[#cc8d1d] transition">Garment</a></li>
                         <li class="list-none"><a href="#" class="block px-8 py-4 text-xl font-bold text-gray-700 hover:bg-gray-50 hover:text-[#cc8d1d] transition">Food</a></li>
                         <li class="list-none"><a href="#" class="block px-8 py-4 text-xl font-bold text-gray-700 hover:bg-gray-50 hover:text-[#cc8d1d] transition">Medical</a></li>
@@ -240,14 +253,12 @@
                     </ul>
                 </li>
 
-                <!-- About Us with Bada Dropdown -->
                 <li class="nav-item relative group list-none">
-                    <!-- Hover color change to #cc8d1d -->
                     <a href="#" class="flex items-center hover:text-[#cc8d1d] py-2 transition">
                         About Us
                         <svg class="w-7 h-7 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
                     </a>
-                    <ul class="dropdown-menu absolute left-0 top-full mt-4 w-max  bg-white rounded-md shadow-2xl border border-gray-100 py-4 list-none p-0 m-0 z-50">
+                    <ul class="dropdown-menu absolute left-0 top-full mt-4 w-max bg-white rounded-md shadow-2xl border border-gray-100 py-4 list-none p-0 m-0 z-50">
                         <li class="list-none"><a href="#" class="block px-8 py-4 text-xl font-bold text-gray-700 hover:bg-gray-50 hover:text-[#cc8d1d] transition">Our Story</a></li>
                         <li class="list-none"><a href="#" class="block px-8 py-4 text-xl font-bold text-gray-700 hover:bg-gray-50 hover:text-[#cc8d1d] transition">Certifications</a></li>
                         <li class="list-none"><a href="#" class="block px-8 py-4 text-xl font-bold text-gray-700 hover:bg-gray-50 hover:text-[#cc8d1d] transition">Our Clients</a></li>
@@ -255,7 +266,6 @@
                 </li>
 
                 <li class="list-none">
-                    <!-- Hover color change to #cc8d1d -->
                     <a href="#" class="hover:text-[#cc8d1d] py-2 transition">Contact</a>
                 </li>
             </ul>
@@ -265,18 +275,18 @@
         </nav>
     </div>
 </header>
+
 <!-- ============================================================= HERO -->
 <div class="hero">
     <div class="container">
-        <video class="hero__video" autoplay muted loop playsinline>
-            <!-- <source src="<?=base_url() ?>html/media/RENDER_1_9.mp4" type="video/mp4"> -->
+        <video class="hero__video " autoplay muted loop playsinline>
             <source src="<?=base_url() ?>assets/videos/3.mp4" type="video/mp4">
         </video>
         <div class="hero__inner">
             <div class="hero__content">
-                <h1 class="hero__title">Complete Packaging Solutions Designed to Meet Every Business Need</h1>
-                <p class="hero__subtitle">Strong. Reliable. Sustainable.<br>Explore Solutions</p>
-                <a class="btn btn--secondary btn--wide btn--arrow btn--hover-split" href="#">
+                <h1 class="hero__title sa-fade-left sa-delay-1">Complete Packaging Solutions Designed to Meet Every Business Need</h1>
+                <p class="hero__subtitle sa-fade-left sa-delay-2">Strong. Reliable. Sustainable.<br>Explore Solutions</p>
+                <a class="btn btn--secondary btn--wide btn--arrow btn--hover-split sa-fade-left sa-delay-4" href="#">
                     <span class="btn__text">
                         Our Products
                         <svg width="28" height="13" viewBox="0 0 28 13" xmlns="http://www.w3.org/2000/svg">
@@ -287,18 +297,16 @@
             </div>
         </div>
     </div>
-    <!-- <a href="#" class="scroll-down"></a> -->
 </div>
 
 <!-- ============================================================= MARKET DIFFERENTIATORS -->
 <div class="container">
     <div class="differentiators" id="anchor">
-        <h2 class="common-title text-center-s">Why Choose GK POLYPACK</h2>
+        <h2 class="common-title text-center-s sa-fade-up sa-delay-1">Why Choose GK POLYPACK</h2>
         <div class="swiper differentiators__slider">
             <div class="differentiators__list swiper-wrapper">
 
-                <!-- Card 1 -->
-                <div class="differentiators__card swiper-slide" style="--overlay-color:">
+                <div class="differentiators__card swiper-slide sa-fade-up sa-delay-3" style="--overlay-color:">
                     <span class="differentiators__progress"></span>
                     <img class="differentiators__card-bg" src="<?=base_url() ?>assets/images/11.jpg" alt="">
                     <div class="differentiators__card-overlay"></div>
@@ -315,7 +323,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="differentiators__card swiper-slide" style="--overlay-color: ">
+                <div class="differentiators__card swiper-slide sa-fade-up sa-delay-5" style="--overlay-color: ">
                     <span class="differentiators__progress"></span>
                     <img class="differentiators__card-bg" src="<?=base_url() ?>assets/images/12.jpg" alt="">
                     <div class="differentiators__card-overlay"></div>
@@ -332,7 +340,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="differentiators__card swiper-slide" style="--overlay-color:">
+                <div class="differentiators__card swiper-slide sa-fade-up sa-delay-7" style="--overlay-color:">
                     <span class="differentiators__progress"></span>
                     <img class="differentiators__card-bg" src="<?=base_url() ?>assets/images/13.jpg" alt="">
                     <div class="differentiators__card-overlay"></div>
@@ -349,7 +357,7 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="differentiators__card swiper-slide" style="--overlay-color: ">
+                <div class="differentiators__card swiper-slide sa-fade-up sa-delay-9" style="--overlay-color: ">
                     <span class="differentiators__progress"></span>
                     <img class="differentiators__card-bg" src="<?=base_url() ?>assets/images/14.jpg" alt="">
                     <div class="differentiators__card-overlay"></div>
@@ -373,44 +381,42 @@
 <!-- ============================================================= NEWS & MEDIA -->
 <div class="news-section container pad-v--m">
     <div class="news-section__header text-center-s">
-        <h2 class="news-section__title common-title">Our Products</h2>
+        <h2 class="news-section__title common-title sa-fade-up sa-delay-1">Our Products</h2>
     </div>
     <div class="swiper news-section__slider">
         <div class="news-section__grid swiper-wrapper">
-
-            <a href="#" class="news-section__card swiper-slide " style="background-image:url('<?=base_url() ?>assets/images/products/1.webp')">
+            <a href="#" class="news-section__card swiper-slide sa-fade-up sa-delay-1" style="background-image:url('<?=base_url() ?>assets/images/products/1.webp')">
                 <span class="news-section__card-title">BOPP</span>
             </a>
 
-            <a href="#" class="news-section__card swiper-slide" style="background-image:url('<?=base_url() ?>assets/images/products/1.png')">
+            <a href="#" class="news-section__card swiper-slide sa-fade-up sa-delay-2" style="background-image:url('<?=base_url() ?>assets/images/products/1.png')">
                 <span class="news-section__card-title">PVC Pouches</span>
             </a>
 
-            <a href="#" class="news-section__card swiper-slide" style="background-image:url('<?=base_url() ?>assets/images/products/3.webp')">
+            <a href="#" class="news-section__card swiper-slide sa-fade-up sa-delay-3" style="background-image:url('<?=base_url() ?>assets/images/products/3.webp')">
                 <span class="news-section__card-title">POLYPROPYLENE (PP) BAGS</span>
             </a>
 
-            <a href="#" class="news-section__card swiper-slide" style="background-image:url('<?=base_url() ?>assets/images/products/4.webp')">
+            <a href="#" class="news-section__card swiper-slide sa-fade-up sa-delay-4" style="background-image:url('<?=base_url() ?>assets/images/products/4.webp')">
                 <span class="news-section__card-title">LDPE Rolls</span>
             </a>
 
-            <a href="#" class="news-section__card swiper-slide" style="background-image:url('<?=base_url() ?>assets/images/4.jpg')">
+            <a href="#" class="news-section__card swiper-slide sa-fade-up sa-delay-5" style="background-image:url('<?=base_url() ?>assets/images/4.jpg')">
                 <span class="news-section__card-title">Laminated / Multilayered Bags</span>
             </a>
 
-            <a href="#" class="news-section__card swiper-slide" style="background-image:url('<?=base_url() ?>assets/images/products/5.webp')">
+            <a href="#" class="news-section__card swiper-slide sa-fade-up sa-delay-6" style="background-image:url('<?=base_url() ?>assets/images/products/5.webp')">
                 <span class="news-section__card-title">Zipper Bags</span>
             </a>
-            <a href="#" class="news-section__card swiper-slide" style="background-image:url('<?=base_url() ?>assets/images/products/7.webp')">
+            <a href="#" class="news-section__card swiper-slide sa-fade-up sa-delay-7" style="background-image:url('<?=base_url() ?>assets/images/products/7.webp')">
                 <span class="news-section__card-title">Slider Bags</span>
             </a>
-            <a href="#" class="news-section__card swiper-slide" style="background-image:url('<?=base_url() ?>assets/images/products/2.png')">
+            <a href="#" class="news-section__card swiper-slide sa-fade-up sa-delay-8" style="background-image:url('<?=base_url() ?>assets/images/products/2.png')">
                 <span class="news-section__card-title">VCI Bag (BLue)</span>
             </a>
-            <a href="#" class="news-section__card swiper-slide" style="background-image:url('<?=base_url() ?>assets/images/products/3.png')">
+            <a href="#" class="news-section__card swiper-slide sa-fade-up sa-delay-9" style="background-image:url('<?=base_url() ?>assets/images/products/3.png')">
                 <span class="news-section__card-title">VCI Bag (Yellow)</span>
             </a>
-
         </div>
     </div>
 </div>
@@ -421,11 +427,11 @@
         <div class="value-chain__inner">
 
             <!-- Left col: circle diagram -->
-            <div class="value-chain__col">
+            <div class="value-chain__col sa-fade-left sa-delay-2">
                 <h3 class="value-chain__heading">Meet Your Packaging Requirements</h3>
                 <p class="value-chain__subheading"></p>
 
-                <div class="value-chain__diagram">
+                <div class="value-chain__diagram sa-zoom-in sa-delay-3">
                     <ul class="value-chain__nav-list value-chain__nav-list--left">
                         <li class="value-chain__nav-item" tabindex="0">
                             <span class="value-chain__nav-label">Recycling</span>
@@ -444,7 +450,7 @@
                         <li class="value-chain__nav-item" tabindex="0">
                             <span class="value-chain__nav-label">Retail</span>
                             <span class="value-chain__icon">
-                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.0049 0.999695C14.7663 0.999695 17.0049 3.23827 17.0049 5.99969V7.99969H20.0049C20.5572 7.99969 21.0049 8.44741 21.0049 8.99969V20.9997C21.0049 21.552 20.5572 21.9997 20.0049 21.9997H4.00488C3.4526 21.9997 3.00488 21.552 3.00488 20.9997V8.99969C3.00488 8.44741 3.4526 7.99969 4.00488 7.99969H7.00488V5.99969C7.00488 3.23827 9.24346 0.999695 12.0049 0.999695ZM17.0049 10.9997H15.0049V11.9997C15.0049 12.552 15.4526 12.9997 16.0049 12.9997C16.5177 12.9997 16.9404 12.6137 16.9982 12.1163L17.0049 11.9997V10.9997ZM9.00488 10.9997H7.00488V11.9997C7.00488 12.552 7.4526 12.9997 8.00488 12.9997C8.51772 12.9997 8.94039 12.6137 8.99815 12.1163L9.00488 11.9997V10.9997ZM12.0049 2.99969C10.4072 2.99969 9.10122 4.24861 9.00998 5.82342L9.00488 5.99969V7.99969H15.0049V5.99969C15.0049 4.40201 13.756 3.09603 12.1812 3.00479L12.0049 2.99969Z"></path></svg>
+                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.0049 0.999695C14.7663 0.999695 17.0049 3.23827 17.0049 5.99969V7.99969H20.0049C20.5572 7.99969 21.0049 8.44741 21.0049 8.99969V20.9997C21.0049 21.552 20.5572 21.9997 20.0049 21.9997H4.00488C3.4526 21.9997 3.00488 21.552 3.00488 20.9997V8.99969C3.00488 8.44741 3.4526 7.99969 4.00488 7.99969H7.00488V5.99969C7.00488 3.23827 9.24346 0.999695 12.0049 0.999695ZM17.0049 10.9997H15.0049V11.9997C15.0049 12.552 15.4526 12.9997 16.0049 12.9997C16.5177 12.9997 16.9404 12.6137 16.9982 12.1163L17.0049 11.9997V10.9997ZM9.00488 10.9997H7.00488V11.9997C7.00488 12.552 7.4526 12.9997 8.00488 12.9997C8.51772 12.9997 8.94039 12.6137 8.99815 12.1163L9.00488 11.9997V10.9997ZM12.0049 2.99969C10.4072 2.99969 9.10122 4.24861 9.00898 5.82342L9.00488 5.99969V7.99969H15.0049V5.99969C15.0049 4.40201 13.756 3.09603 12.1812 3.00479L12.0049 2.99969Z"></path></svg>
                             </span>
                             <span class="value-chain__nav-info sr-only">GK POLYPACK's BOPP and Laminated bags are available in various formats — high clarity, matte and printed finishes — perfect for attractive retail shelf display.</span>
                         </li>
@@ -456,8 +462,7 @@
                             <span class="value-chain__nav-info sr-only">GK POLYPACK's Zipper and LDPE bags ensure flawless bag integrity from manufacturer to retailer — durable, high-quality seals for safe product distribution.</span>
                         </li>
                     </ul>
-                  <div class="value-chain__center">
-                    </div>
+                    <div class="value-chain__center"></div>
 
                     <ul class="value-chain__nav-list value-chain__nav-list--right">
                         <li class="value-chain__nav-item" tabindex="0">
@@ -502,7 +507,7 @@
                             <span class="value-chain__nav-info sr-only">GK POLYPACK compostable and LDPE bags are ideal for retail, garment, food and everyday use — durable, convenient and eco-conscious for modern consumers.</span>
                         </li>
                         <li class="value-chain__nav-item" tabindex="0">
-                            <span class="value-chain__icon"><svg width="22" height="20" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"><path d="M11,0 C10.2164038,0 4.7265625,5.83333333 4.7265625,5.83333333 L7.11959092,5.83333333 L11,2.01171875 L14.8804091,5.83333333 L17.2734371,5.83333333 L11,0 Z M0,7.5 L0,10 L2.30213339,18.6067708 C2.43836416,19.4101042 3.1446118,20 3.97130411,20 L18.0270437,20 C18.8545822,20 19.5599834,19.4101042 19.6962142,18.6067708 L22,10 L22,7.5 L0,7.5 Z" fill-rule="nonzero"/></svg></span>
+                            <span class="value-chain__icon"><svg width="22" height="20" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"><path d="M11,0 C10.2164038,0 4.7265625,5.83333333 L4.7265625,5.83333333 L7.11959092,5.83333333 L11,2.01171875 L14.8804091,5.83333333 L17.2734371,5.83333333 L11,0 Z M0,7.5 L0,10 L2.30213339,18.6067708 C2.43836416,19.4101042 3.1446118,20 3.97130411,20 L18.0270437,20 C18.8545822,20 19.5599834,19.4101042 19.6962142,18.6067708 L22,10 L22,7.5 L0,7.5 Z" fill-rule="nonzero"/></svg></span>
                             <span class="value-chain__nav-label">Retail</span>
                             <span class="value-chain__nav-info sr-only">GK POLYPACK's BOPP and Laminated bags are available in various formats — high clarity, matte and printed finishes — perfect for attractive retail shelf display.</span>
                         </li>
@@ -511,40 +516,18 @@
                             <span class="value-chain__nav-label">Distribution</span>
                             <span class="value-chain__nav-info sr-only">GK POLYPACK's Zipper and LDPE bags ensure flawless bag integrity from manufacturer to retailer — durable, high-quality seals for safe product distribution.</span>
                         </li>
-                        <li class="value-chain__nav-item" tabindex="0">
-                            <span class="value-chain__icon"><svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M5.57283381,0 C5.13958601,0 4.97458949,0.247896677 4.97458949,0.247896677 L0.248129281,4.97445909 C-0.0827098028,5.30530533 0.248129281,6.1709736 0.248129281,6.1709736 L5.14976603,11.0727168 L6.34625458,9.87620192 L2.04286206,5.57271635 L5.57283381,2.04266827 L8.78219929,5.25210332 L7.01721384,7.01712762 L8.11124088,8.11117831 L11.0727153,5.14963942 L5.57283381,0 Z M18.468138,0.846153038 C17.271649,1.34359974 17.271649,1.34359974 16.0768134,2.53846154 L19.4613556,5.92307692 L20.6561912,4.72821512 C21.3170231,4.06736897 20.6578437,2.33683898 18.468138,0.846153038 Z M14.3845423,4.23076923 L2.73365246,15.8819108 L6.11819465,19.2665262 L17.7690845,7.61538462 L14.3845423,4.23076923 Z" fill-rule="nonzero"/></svg></span>
-                            <span class="value-chain__nav-label">Design</span>
-                            <span class="value-chain__nav-info sr-only">GK POLYPACK offers custom design and printing on all bag types, aligning packaging with your brand image and product specifications for maximum shelf impact.</span>
-                        </li>
-                        <li class="value-chain__nav-item" tabindex="0">
-                            <span class="value-chain__icon"><svg width="22" height="20" viewBox="0 0 22 20" xmlns="http://www.w3.org/2000/svg"><path d="M5.27699415,0 C4.30514784,0 3.5179963,1.73912284 3.5179963,1.73912284 L3.5179963,11.3042985 L17.5899791,11.3042985 C18.5618254,11.3042985 19.348977,10.526041 19.348977,1.73912284 C19.348977,0.778257471 18.5618254,0 17.5899791,0 L5.27699415,0 Z M3.5179963,13.0434213 C1.58544349,13.0434213 0,14.6109501 0,16.521667 C0,19.9999127 3.5179963,19.9999127 3.5179963,19.9999127 L21.1079748,19.9999127 L21.1079748,13.0434213 L3.5179963,13.0434213 Z" fill-rule="nonzero"/></svg></span>
-                            <span class="value-chain__nav-label">Production</span>
-                            <span class="value-chain__nav-info sr-only">GK POLYPACK produces BOPP, LDPE, Compostable, Zipper, Laminated, PVC, PP Boxes and LD/PP Rolls using ISO certified processes and hi-tech factory machinery.</span>
-                        </li>
-                        <li class="value-chain__nav-item" tabindex="0">
-                            <span class="value-chain__icon"><svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L0,9 L2.0585938,9 C2.1795938,7.495 3.6230469,3.6230469 3.6230469,3.6230469 C4.7040469,2.5430469 9,2.0585938 9,2.0585938 L9,0 L0,0 Z M10,4 C5.0371094,5.0371094 4,10 4,10 C4,14.962891 7.007812,15.650391 7.007812,15.650391 C9.490234,9.490234 9.490234,9.490234 15.5,7 C15.650391,7.007812 14.962891,5.0390625 10,4 Z M15.5,9 C11.9101491,9 9,11.9101491 9,15.5 C9,19.0898509 11.9101491,22 15.5,22 C19.0898509,22 22,19.0898509 22,15.5 C22,11.9101491 19.0898509,9 15.5,9 Z" fill-rule="nonzero"/></svg></span>
-                            <span class="value-chain__nav-label">Conversion</span>
-                            <span class="value-chain__nav-info sr-only">GK POLYPACK's state-of-the-art factory processes include printing, laminating and sealing — creating premium quality packaging that protects and presents your product.</span>
-                        </li>
-                        <li class="value-chain__nav-item" tabindex="0">
-                            <span class="value-chain__icon"><svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><path d="M10.9958443,1.57339772 L17.1728035,5.09418758 L10.9958443,9.08231329 L4.85756263,5.09562118 L10.9958443,1.57339772 Z M3.55111856,6.30696783 L9.66075046,10.1832769 L7.52631826,12.2160462 L1.99685123,8.27379351 L3.55111856,6.30696783 Z M18.4405703,6.30696783 L19.9948371,8.27379351 L14.4653703,12.2160462 L12.3309381,10.1832769 L18.4405703,6.30696783 Z M10.9958443,9.08231329 L2.19453681,10.2850588 L2.19453681,15.9805387 L10.9958443,22 L19.7828269,15.9963075 L19.7828269,10.3079955 L10.9958443,9.08231329 Z" fill-rule="nonzero"/></svg></span>
-                            <span class="value-chain__nav-label">Packing</span>
-                            <span class="value-chain__nav-info sr-only">GK POLYPACK's high-efficiency polybags are designed for seamless packing and filling, ensuring your product's safety and presentation from factory to retail shelf.</span>
-                        </li>
                     </ul>
-
                 </div>
 
                 <h3 class="value-chain__heading">Step Up Your Packaging Game</h3>
                 <p class="value-chain__subheading"></p>
-
             </div>
 
-            <div class="value-chain__col">
+            <div class="value-chain__col sa-fade-right sa-delay-2">
                 <div class="value-chain__content">
-                    <h2 class="section-title common-title">One Vision, Infinite Packaging Solutions</h2>
-                    <p>GK POLYPACK is a leading manufacturer of polybags established in 2007. From humble beginnings with a single bag-making machine to today's hi-tech factory, we provide BOPP Bags, LDPE Bags, Compostable Bags, Zipper Bags, Laminated Bags, PVC Bags, PP Boxes and LD/PP Rolls. ISO 9001:2015 certified and CPCB approved.</p>
-                    <a class="btn btn--secondary btn--wide btn--arrow btn--hover-split" href="#">
+                    <h2 class="section-title common-title sa-fade-up sa-delay-3">One Vision, Infinite Packaging Solutions</h2>
+                    <p class="sa-fade-up sa-delay-4">GK POLYPACK is a leading manufacturer of polybags established in 2010. From humble beginnings with a single bag-making machine to today's hi-tech factory, we provide BOPP Bags, LDPE Bags, Compostable Bags, Zipper Bags, Laminated Bags, PVC Bags, PP Boxes and LD/PP Rolls. ISO 9001:2015 certified and CPCB approved.</p>
+                    <a class="btn btn--secondary btn--wide btn--arrow btn--hover-split sa-fade-up sa-delay-5" href="#">
                         <span class="btn__text">
                             Our Story
                             <svg width="28" height="13" viewBox="0 0 28 13" xmlns="http://www.w3.org/2000/svg">
@@ -564,7 +547,7 @@
     <div class="container">
         <div class="stats-banner__inner">
 
-            <div class="stats-banner__item">
+            <div class="stats-banner__item sa-fade-up sa-delay-1">
                 <svg class="stats-banner__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
                 </svg>
@@ -572,7 +555,7 @@
                 <span class="stats-banner__label">Year Established</span>
             </div>
 
-            <div class="stats-banner__item">
+            <div class="stats-banner__item sa-fade-up sa-delay-3">
                 <svg class="stats-banner__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
                 </svg>
@@ -580,7 +563,7 @@
                 <span class="stats-banner__label">Renowned Clients</span>
             </div>
 
-            <div class="stats-banner__item">
+            <div class="stats-banner__item sa-fade-up sa-delay-5">
                 <svg class="stats-banner__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 6h-2.18c.07-.44.18-.86.18-1.3C18 2.12 15.88 0 13.3 0c-1.3 0-2.4.5-3.2 1.4L12 4.38 13.9 2.5c.4-.4.9-.5 1.4-.5 1.28 0 2.3 1.02 2.3 2.3 0 .82-.5 1.52-1.1 2.06L13 8.8V10h7v8h-2v2h4V8c0-1.1-.9-2-2-2zM2 6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2H2zm7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H3l3-4 2 3 3-4 4 5z"/>
                 </svg>
@@ -588,7 +571,7 @@
                 <span class="stats-banner__label">Product Categories</span>
             </div>
 
-            <div class="stats-banner__item">
+            <div class="stats-banner__item sa-fade-up sa-delay-7">
                 <svg class="stats-banner__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
                 </svg>
@@ -601,68 +584,140 @@
 </div>
 
 <!-- ============================================================= FOOTER -->
+<!-- Remix Icon CDN -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+<style>
+    /* Teeno columns ke beech barabar space maintain karne ke liye */
+    .site-footer__inner.footer-grid-layout {
+        display: grid;
+        grid-template-columns: 1.4fr 1.6fr 1fr;
+        gap: 3.5rem; /* Teeno columns ke beech barabar gap */
+        align-items: start;
+    }
+
+    @media (max-width: 991px) {
+        .site-footer__inner.footer-grid-layout {
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .site-footer__inner.footer-grid-layout {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+
+    .footer-social-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        background-color: #132849;
+        color: #ffffff !important;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+    .footer-social-btn:hover {
+        background-color: #d69426;
+        transform: translateY(-2px);
+    }
+</style>
+
 <div class="site-footer-wrapper">
     <footer class="site-footer container">
+        <div class="site-footer__inner footer-grid-layout bb pad-v--m">
+            <div class="site-footer__brand sa-fade-up sa-delay-1" style="max-width: 100%;">
+                <a class="site-footer__logo" href="<?=base_url() ?>">
+                    <img src="<?=base_url() ?>assets/images/logo.png" alt="GK POLYPACK" style="width: 70%; height: auto;">
+                </a>
+                
+                <p style="color: #142849; font-size: 14px; line-height: 1.6; margin-top: 1.2rem; margin-bottom: 0;">
+                    <strong style="color: #d69426;">Gopal Krishan Enterprises</strong>, established in 2010, is a trusted manufacturing group behind <strong style="color: #d69426;">GK POLYPACK</strong>, a dedicated polybag manufacturing unit specializing in high-quality Compostable, BOPP, and flexible packaging solutions. With a strong focus on quality and sustainability, GK POLYPACK delivers reliable packaging solutions for diverse industries.
+                </p>
+            </div>
 
-        <div class="site-footer__inner bb pad-v--m">
+            <!-- Column 2: Nav (Products & Connect Side-by-Side) -->
+            <div class="site-footer__nav sa-fade-up sa-delay-3" style="width: 100%;">
+                <ul id="menu-footer" class="menu" style="display: flex; gap: 2.5rem; justify-content: space-between; margin: 0; padding: 0; list-style: none;">
 
-            <a class="site-footer__logo" href="#">
-                <img src="<?=base_url() ?>assets/images/logo.png" alt="GK POLYPACK" style="width: 120px; height: auto;">
-            </a>
-
-            <div class="site-footer__nav">
-                <ul id="menu-footer" class="menu">
-
-                    <li class="menu-item menu-item-has-children">
-                        <a href="#" data-title="Products">Products</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item"><a href="#"  data-title="Compostable Bags">Compostable Bags</a></li>
-                            <li class="menu-item"><a href="#"      data-title="GRS/RCS Bags">GRS/RCS Certified Bags</a></li>
-                            <li class="menu-item"><a href="#"         data-title="LDPE Bags">LDPE Bags</a></li>
-                            <li class="menu-item"><a href="#"         data-title="BOPP Bags">BOPP Bags</a></li>
+                    <!-- Products -->
+                    <li class="menu-item menu-item-has-children" style="flex: 1;">
+                        <a href="#" data-title="Products" style="font-size: 14px; font-weight: 700; color: #142849; text-transform: uppercase;">Products</a>
+                        <ul class="sub-menu" style="margin-top: 1rem; padding: 0; list-style: none;">
+                            <li class="menu-item" style="margin-bottom: 0.5rem;"><a href="#" data-title="Compostable Bags" style="font-size: 14px; color: #142849; text-decoration: none;">Compostable Bags</a></li>
+                            <li class="menu-item" style="margin-bottom: 0.5rem;"><a href="#" data-title="GRS/RCS Bags" style="font-size: 14px; color: #142849; text-decoration: none;">GRS/RCS Certified Bags</a></li>
+                            <li class="menu-item" style="margin-bottom: 0.5rem;"><a href="#" data-title="LDPE Bags" style="font-size: 14px; color: #142849; text-decoration: none;">LDPE Bags</a></li>
+                            <li class="menu-item" style="margin-bottom: 0.5rem;"><a href="#" data-title="BOPP Bags" style="font-size: 14px; color: #142849; text-decoration: none;">BOPP Bags</a></li>
+                            <li class="menu-item" style="margin-bottom: 0.5rem;"><a href="#" data-title="Laminated Bags" style="font-size: 14px; color: #142849; text-decoration: none;">Laminated Bags</a></li>
+                            <li class="menu-item" style="margin-bottom: 0.5rem;"><a href="#" data-title="Zipper Bags" style="font-size: 14px; color: #142849; text-decoration: none;">Zipper Bags</a></li>
+                            <li class="menu-item" style="margin-bottom: 0.5rem;"><a href="#" data-title="PVC Bags" style="font-size: 14px; color: #142849; text-decoration: none;">PVC Bags</a></li>
+                            <li class="menu-item" style="margin-bottom: 0;"><a href="#" data-title="PP Boxes" style="font-size: 14px; color: #142849; text-decoration: none;">PP Boxes</a></li>
                         </ul>
                     </li>
 
-                    <li class="menu-item menu-item-has-children">
-                        <a href="#" data-title="More Products">More Products</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item"><a href="#"  data-title="Laminated Bags">Laminated Bags</a></li>
-                            <li class="menu-item"><a href="#"     data-title="Zipper Bags">Zipper Bags</a></li>
-                            <li class="menu-item"><a href="#"        data-title="PVC Bags">PVC Bags</a></li>
-                            <li class="menu-item"><a href="#"        data-title="PP Boxes">PP Boxes</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-item menu-item-has-children">
-                        <a href="#" data-title="About Us">About Us</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item"><a href="#"          data-title="Our Story">Our Story</a></li>
-                            <li class="menu-item"><a href="#"  data-title="Certifications">Certifications</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-item menu-item-has-children">
-                        <a href="#" data-title="Connect">Connect</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item"><a href="#"  data-title="Contact Us">Contact Us</a></li>
-                            <li class="menu-item"><a href="#" target="_blank" rel="noopener" data-title="LinkedIn">LinkedIn</a></li>
-                        </ul>
+                    <!-- Connect -->
+                    <li class="menu-item menu-item-has-children" style="flex: 1;">
+                        <a href="#" data-title="Connect" style="font-size: 14px; font-weight: 700; color: #142849; text-transform: uppercase;">Contact Info</a>
+                        <div class="site-footer__company-info" style="margin-top: 1rem; color: #142849; font-size: 14px; line-height: 1.6;">
+                            <p style="margin: 0 0 0.6rem 0;">
+                                <strong style="color: #d69426;">Address:</strong><br> Plot No. 123, Industrial Area, Phase-I, New Delhi, India
+                            </p>
+                            <p style="margin: 0 0 0.6rem 0;">
+                                <strong style="color: #d69426;">Phone:</strong><br>
+                                <a href="tel:+919876543210" style="color: #142849; font-size: 14px; text-decoration: none;">+91 98765 43210</a>
+                            </p>
+                            <p style="margin: 0;">
+                                <strong style="color: #d69426;">Email:</strong><br>
+                                <a href="mailto:info@gkpolypack.com" style="color: #142849; font-size: 14px; text-decoration: none;">info@gkpolypack.com</a>
+                            </p>
+                        </div>
                     </li>
 
                 </ul>
             </div>
 
-            <div class="newsletter-cta">
-                <p class="newsletter-cta__title">Keep Informed</p>
-                <button class="btn btn--primary btn--hover-glow open-modal js-open-newsletter">
-                    <span class="btn__text">GK POLYPACK Newsletter</span>
-                </button>
+            <!-- Column 3: Newsletter CTA & Outside Socials -->
+            <div class="sa-fade-up sa-delay-5" style="display: flex; flex-direction: column; align-items: flex-start; width: 100%;">
+                
+                <!-- Yellow Box CTA -->
+                <div class="newsletter-cta" style="margin-bottom: 0; width: 100%;">
+                    <p class="newsletter-cta__title" style="font-size: 14px; font-weight: 700; color: #142849;">Keep Informed</p>
+                    <button class="btn btn--primary btn--hover-glow open-modal js-open-newsletter" style="width: 100%;">
+                        <span class="btn__text" style="font-size: 14px;">GK POLYPACK Newsletter</span>
+                    </button>
+                </div>
+
+                <!-- Social Icons (Yellow Box Ke Bahar) -->
+                <div class="footer-social-links" style="margin-top: 1.5rem; width: 100%;">
+                    <p style="color: #142849; font-size: 14px; font-weight: 700; margin: 0 0 0.6rem 0; text-transform: uppercase; letter-spacing: 0.5px;">Follow Us</p>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <!-- Instagram -->
+                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-btn">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <!-- Facebook -->
+                        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-btn">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-social-btn">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
         </div>
 
-        <div class="legal-bar">
-            <p class="copyrights">© GK POLYPACK. 2024. All Rights Reserved.</p>
+        <div class="legal-bar sa-fade-up sa-delay-2" style="font-size: 14px;">
+            <p class="copyrights" style="font-size: 14px;">© GK POLYPACK. 2026. All Rights Reserved.</p>
             <div class="legal-bar__center">
                 <a href="#" target="_blank" rel="noopener" class="legal-bar__linkedin">
                     <img src="<?=base_url() ?>html/images/linkedin-b.svg" alt="LinkedIn">
@@ -670,8 +725,8 @@
             </div>
             <div class="legal-bar__links">
                 <ul id="menu-terms" class="menu">
-                    <li class="menu-item"><a href="#"   data-title="Terms of Use">Terms of Use</a></li>
-                    <li class="menu-item"><a href="#" data-title="Privacy Policy">Privacy Policy</a></li>
+                    <li class="menu-item"><a href="#" data-title="Terms of Use" style="font-size: 14px;">Terms of Use</a></li>
+                    <li class="menu-item"><a href="#" data-title="Privacy Policy" style="font-size: 14px;">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
@@ -692,53 +747,36 @@
 
         <!-- Newsletter Modal -->
         <div class="modal modal--newsletter">
-            <!-- Modal Container (Increased width to 560px and max-w-xl) -->
             <div class="modal__inner relative mx-auto w-full max-w-xl overflow-hidden rounded-2xl bg-white p-0 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] ring-1 ring-gray-100 sm:w-[560px]">
                 
-                <!-- Refined Close Button (Slightly larger) -->
                 <button aria-label="Close modal" class="modal__close absolute top-5 right-5 z-10 flex h-12 w-12 m-0 cursor-pointer items-center justify-center rounded-full border-none bg-gray-50 p-0 text-gray-500 transition-all duration-300 hover:bg-gray-200 hover:text-gray-900 focus:outline-none">
                     <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <polygon fill-rule="nonzero" points="1.564 0 0.05 1.518 8.486 9.975 0 18.499 1.498 20 10 11.493 18.486 20 20 18.482 11.514 9.975 19.95 1.518 18.436 0 10 8.457"/>
                     </svg>
                 </button>
 
-                <!-- Header Section (Increased padding) -->
                 <div class="relative flex flex-col items-center border-b border-gray-100 bg-gray-50/50 px-10 pb-8 pt-12 text-center sm:px-14 sm:pt-12">
-                    
-                    <!-- Gradient Icon Box (Increased size to h-20 w-20) -->
                     <div class="relative mb-5 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#c49428] to-[#deb455] text-white shadow-lg">
                         <div class="absolute inset-0 rounded-2xl border border-white/20"></div>
                         <svg class="ml-1 h-10 w-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M1.94607 9.31543C1.42353 9.14125 1.4194 8.86022 1.95682 8.68108L21.043 2.31901C21.5715 2.14285 21.8746 2.43866 21.7265 2.95694L16.2733 22.0432C16.1223 22.5716 15.8177 22.59 15.5944 22.0876L11.9999 14L17.9999 6.00005L9.99992 12L1.94607 9.31543Z"></path>
                         </svg>
                     </div>
-                    
-                    <!-- Heading (Increased to text-3xl) -->
                     <h2 class="m-0 text-3xl font-bold tracking-tight text-gray-900">Stay Informed</h2>
-                    
-                    <!-- Subheading (Increased to text-lg) -->
                     <p class="m-0 mt-3 text-lg font-medium leading-relaxed text-gray-700">Subscribe for the latest updates and premium packaging solutions from GK POLYPACK.</p>
                 </div>
 
-                <!-- Form Section -->
                 <div class="w-full px-10 py-10 sm:px-14">
                     <form method="post" id="gform_1" class="m-0 block w-full">
-                        <!-- Increased gap between inputs -->
                         <div class="flex w-full flex-col gap-5">
-                            
-                            <!-- Input: Name (Increased height to h-14, text to text-lg) -->
                             <div class="block w-full">
                                 <input type="text" id="nl_name" name="nl_name" placeholder="Full Name" aria-label="Full Name" required class="m-0 block h-14 w-full appearance-none rounded-xl border border-gray-300 bg-white px-5 text-lg text-gray-900 transition-all focus:border-[#c49428] focus:outline-none focus:ring-1 focus:ring-[#c49428]" />
                             </div>
-
-                            <!-- Input: Email (Increased height to h-14, text to text-lg) -->
                             <div class="block w-full">
                                 <input type="email" id="nl_email" name="nl_email" placeholder="Email Address" aria-label="Email Address" required class="m-0 block h-14 w-full appearance-none rounded-xl border border-gray-300 bg-white px-5 text-lg text-gray-900 transition-all focus:border-[#c49428] focus:outline-none focus:ring-1 focus:ring-[#c49428]" />
                             </div>
-                            
                         </div>
 
-                        <!-- Animated Button (Increased height to h-14, text to text-base) -->
                         <div class="mt-8 block w-full">
                             <button type="submit" class="group relative m-0 flex h-14 w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl border-none bg-[#c49428] p-0 transition-all duration-300 hover:bg-[#b08420] focus:outline-none focus:ring-2 focus:ring-[#c49428] focus:ring-offset-2">
                                 <span class="relative flex h-full w-full items-center justify-center px-6 text-base font-bold uppercase tracking-wider text-white">
@@ -756,7 +794,6 @@
 
     </footer>
 </div>
-
 <!-- ============================================================= SCRIPTS -->
 <script src="<?=base_url() ?>assets/js/swiper-bundle.min.js"></script>
 <script src="<?=base_url() ?>assets/js/base.js"></script>
@@ -765,18 +802,17 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const header = document.querySelector('.site-header');
-
-        window.addEventListener('scroll', function() {
-            // Jab page 50px se zyada niche scroll hoga, tab class add hogi
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+        if (header) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
     });
 </script>
-<!-- Stats Counter Animation -->
 <script>
 (function(){
     function animateCounter(el){
@@ -814,6 +850,27 @@
 
     counters.forEach(function(el){ observer.observe(el); });
 })();
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const animatedElements = document.querySelectorAll('.sa-fade-up, .sa-fade-left, .sa-fade-right, .sa-zoom-in');
+        if (!animatedElements.length) return;
+        const scrollObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    requestAnimationFrame(() => {
+                        entry.target.classList.add('sa-active');
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.05,
+            rootMargin: '0px 0px -20px 0px'
+        });
+
+        animatedElements.forEach(el => scrollObserver.observe(el));
+    });
 </script>
 
 </body>
