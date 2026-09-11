@@ -1,0 +1,44 @@
+# >>> PERO BASE TOP >>>
+# Managed by Pero — do not edit between markers. Rules outside markers are preserved.
+<FilesMatch "(^\.|\.(env|log|sql|sqlite|ini|md|bak|swp|dist|sample|sh|yml|yaml)$)">
+    Require all denied
+</FilesMatch>
+<Files ~ "^(composer\.(json|lock)|package(-lock)?\.json|web\.sql)$">
+    Require all denied
+</Files>
+# <<< PERO BASE TOP <<<
+
+php_value upload_max_filesize 1000M
+php_value post_max_size 1000M
+php_value max_execution_time 600
+php_value max_input_time 600
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Serve real files/folders directly (if they exist in public)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Allow public folder direct access
+RewriteCond %{REQUEST_URI} ^/public [NC]
+RewriteRule ^ - [L]
+
+# 🚀 Everything else (INCLUDING /pero/assets) → index.php
+RewriteRule ^ index.php [L,QSA]
+</IfModule>
+
+# >>> PERO BASE ROUTER >>>
+# Managed by Pero — pass-through real files, send everything else through index.php.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /gkpolypack/
+# Block access into hidden dirs/files (.git, .cache, .sessions, .env) — allow .well-known for SSL.
+RewriteRule "(^|/)\.(?!well-known)" - [F]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^ index.php [L,QSA]
+</IfModule>
+# <<< PERO BASE ROUTER <<<

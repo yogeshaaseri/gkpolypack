@@ -1,0 +1,17 @@
+.DS_Store
+.claude
+.sessions
+.env
+.sessions
+env
+logs
+vendor
+
+public
+documentation
+node_modules
+html
+images
+js
+1.pdf
+videos
