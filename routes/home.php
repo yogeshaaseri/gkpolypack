@@ -98,13 +98,13 @@
         </div>
     </div>
 
-    <div class="news-section container pad-v--m">
+   <div class="news-section container pad-v--m">
         <div class="news-section__header text-center-s">
             <h2 class="news-section__title common-title sa-fade-up sa-delay-1">Our Products</h2>
         </div>
         <div class="swiper news-section__slider py-8">
             <div class="news-section__grid swiper-wrapper">
-                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl">
+                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl sa-fade-up sa-delay-1">
                     <img src="<?=base_url() ?>assets/images/products/1.png" alt="BOPP" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                     <div class="absolute inset-x-0 bottom-0 p-6 transition-opacity duration-300 group-hover:opacity-0">
                         <span class="text-2xl font-extrabold uppercase tracking-wider text-[#112849]">
@@ -121,7 +121,7 @@
                         </p>
                     </div>
                 </a>
-                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl">
+                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl sa-fade-up sa-delay-2">
                     <img src="<?=base_url() ?>assets/images/products/2.png" alt="PVC Pouches" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
 
                     <div class="absolute inset-x-0 bottom-0 p-6 transition-opacity duration-300 group-hover:opacity-0">
@@ -139,7 +139,7 @@
                         </p>
                     </div>
                 </a>
-                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl">
+                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl sa-fade-up sa-delay-3">
                     <img src="<?=base_url() ?>assets/images/products/3.png" alt="POLYPROPYLENE (PP) BAGS" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
 
                     <div class="absolute inset-x-0 bottom-0 p-6 transition-opacity duration-300 group-hover:opacity-0">
@@ -158,7 +158,7 @@
                         </p>
                     </div>
                 </a>
-                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl">
+                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl sa-fade-up sa-delay-4">
                     <img src="<?=base_url() ?>assets/images/products/4.png" alt="LDPE Rolls" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
 
                     <div class="absolute inset-x-0 bottom-0 p-6 transition-opacity duration-300 group-hover:opacity-0">
@@ -178,7 +178,7 @@
                     </div>
                 </a>
 
-                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl">
+                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl sa-fade-up sa-delay-5">
                     <img src="<?=base_url() ?>assets/images/products/5.png" alt="Laminated / Multilayered Bags" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
 
                     <div class="absolute inset-x-0 bottom-0 p-6 transition-opacity duration-300 group-hover:opacity-0">
@@ -197,7 +197,7 @@
                         </p>
                     </div>
                 </a>
-                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl">
+                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl sa-fade-up sa-delay-6">
                     <img src="<?=base_url() ?>assets/images/products/6.png" alt="Zipper Bags" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
 
                     <div class="absolute inset-x-0 bottom-0 p-6 transition-opacity duration-300 group-hover:opacity-0">
@@ -216,7 +216,7 @@
                         </p>
                     </div>
                 </a>
-                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl">
+                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl sa-fade-up sa-delay-7">
                     <img src="<?=base_url() ?>assets/images/products/7.png" alt="Slider Bags" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
 
                     <div class="absolute inset-x-0 bottom-0 p-6 transition-opacity duration-300 group-hover:opacity-0">
@@ -235,7 +235,7 @@
                         </p>
                     </div>
                 </a>
-                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl">
+                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl sa-fade-up sa-delay-8">
                     <img src="<?=base_url() ?>assets/images/products/8.png" alt="VCI Bag (Blue)" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
 
                     <div class="absolute inset-x-0 bottom-0 p-6 transition-opacity duration-300 group-hover:opacity-0">
@@ -253,7 +253,7 @@
                         </p>
                     </div>
                 </a>
-                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl">
+                <a href="#" class="swiper-slide group relative block h-[380px] w-full overflow-hidden rounded-2xl bg-gray-100 transition-all duration-300 hover:shadow-2xl sa-fade-up sa-delay-9">
                     <img src="<?=base_url() ?>assets/images/products/9.png" alt="VCI Bag (Yellow)" class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
 
                     <div class="absolute inset-x-0 bottom-0 p-6 transition-opacity duration-300 group-hover:opacity-0">
@@ -395,44 +395,44 @@
         </div>
     </div>
 
-<div class="stats-banner">
-    <div class="container">
-        <div class="stats-banner__inner">
-            <div class="stats-banner__item sa-fade-up sa-delay-1">
-                <svg class="stats-banner__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
-                </svg>
-                <span class="stats-banner__number" data-counter data-target="2010" data-start="1995" data-duration="1800">2010</span>
-                <span class="stats-banner__label">Year Established</span>
-            </div>
+    <div class="stats-banner">
+        <div class="container">
+            <div class="stats-banner__inner">
+                <div class="stats-banner__item sa-fade-up sa-delay-1">
+                    <svg class="stats-banner__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+                    </svg>
+                    <span class="stats-banner__number" data-counter data-target="2010" data-start="1995" data-duration="1800">2010</span>
+                    <span class="stats-banner__label">Year Established</span>
+                </div>
 
-            <div class="stats-banner__item sa-fade-up sa-delay-3">
-                <svg class="stats-banner__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-                </svg>
-                <span class="stats-banner__number" data-counter data-target="250" data-start="0" data-duration="1400" data-suffix="+">0</span>
-                <span class="stats-banner__label">Renowned Clients</span>
-            </div>
+                <div class="stats-banner__item sa-fade-up sa-delay-3">
+                    <svg class="stats-banner__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                    </svg>
+                    <span class="stats-banner__number" data-counter data-target="250" data-start="0" data-duration="1400" data-suffix="+">0</span>
+                    <span class="stats-banner__label">Renowned Clients</span>
+                </div>
 
-            <div class="stats-banner__item sa-fade-up sa-delay-5">
-                <svg class="stats-banner__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 6h-2.18c.07-.44.18-.86.18-1.3C18 2.12 15.88 0 13.3 0c-1.3 0-2.4.5-3.2 1.4L12 4.38 13.9 2.5c.4-.4.9-.5 1.4-.5 1.28 0 2.3 1.02 2.3 2.3 0 .82-.5 1.52-1.1 2.06L13 8.8V10h7v8h-2v2h4V8c0-1.1-.9-2-2-2zM2 6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2H2zm7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H3l3-4 2 3 3-4 4 5z"/>
-                </svg>
-                <span class="stats-banner__number" data-counter data-target="15" data-start="0" data-duration="1200" data-suffix="+">0</span>
-                <span class="stats-banner__label">Product Categories</span>
-            </div>
+                <div class="stats-banner__item sa-fade-up sa-delay-5">
+                    <svg class="stats-banner__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6h-2.18c.07-.44.18-.86.18-1.3C18 2.12 15.88 0 13.3 0c-1.3 0-2.4.5-3.2 1.4L12 4.38 13.9 2.5c.4-.4.9-.5 1.4-.5 1.28 0 2.3 1.02 2.3 2.3 0 .82-.5 1.52-1.1 2.06L13 8.8V10h7v8h-2v2h4V8c0-1.1-.9-2-2-2zM2 6c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2H2zm7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H3l3-4 2 3 3-4 4 5z"/>
+                    </svg>
+                    <span class="stats-banner__number" data-counter data-target="15" data-start="0" data-duration="1200" data-suffix="+">0</span>
+                    <span class="stats-banner__label">Product Categories</span>
+                </div>
 
-            <div class="stats-banner__item sa-fade-up sa-delay-7">
-                <svg class="stats-banner__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
-                </svg>
-                <span class="stats-banner__number stats-banner__number--text">ISO</span>
-                <span class="stats-banner__label">9001:2015 Certified</span>
-            </div>
+                <div class="stats-banner__item sa-fade-up sa-delay-7">
+                    <svg class="stats-banner__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                    </svg>
+                    <span class="stats-banner__number stats-banner__number--text">ISO</span>
+                    <span class="stats-banner__label">9001:2015 Certified</span>
+                </div>
 
+            </div>
         </div>
     </div>
-</div>
 <?php require_once 'layout/footer.php'; ?>
 <?php require_once 'layout/scripts.php'; ?>
 
