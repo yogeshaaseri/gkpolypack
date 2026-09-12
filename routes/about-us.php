@@ -38,7 +38,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div class="lg:col-span-6 sa-fade-left sa-delay-2">
                 <div class="relative">
-                    <img src="<?=base_url() ?>assets/images/11.jpg" alt="GK POLYPACK Plant" class="w-full h-[480px] object-cover rounded-2xl shadow-2xl">
+                    <img src="<?=base_url() ?>assets/images/products/1.png" alt="GK POLYPACK Plant" class="w-full h-[480px] object-cover rounded-2xl shadow-2xl">
                     <div class="absolute -bottom-8 -right-8 bg-[#0b2644] text-white p-8 rounded-2xl shadow-xl hidden sm:block border-l-4 border-[#d19220]">
                         <span class="text-4xl font-extrabold text-[#d19220] block">16+</span>
                         <span class="text-sm tracking-wider uppercase font-semibold text-gray-300">Years of Excellence</span>
