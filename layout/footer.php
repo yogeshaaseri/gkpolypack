@@ -21,6 +21,16 @@
         }
     }
 
+    /* Theme CSS me site-footer__nav aur site-footer__logo display:none hain mobile pe — override */
+    .site-footer__inner.footer-grid-layout .site-footer__nav {
+        display: block !important;
+        width: 100%;
+        padding: 0 !important;
+    }
+    .site-footer__inner.footer-grid-layout .site-footer__logo {
+        display: inline-block !important;
+    }
+
     .footer-social-btn {
         display: inline-flex;
         align-items: center;
@@ -126,20 +136,24 @@
 
         </div>
 
-        <div class="legal-bar sa-fade-up sa-delay-2" style="font-size: 14px;">
-            <p class="copyrights" style="font-size: 14px;">© GK POLYPACK. 2026. All Rights Reserved.</p>
-            <div class="legal-bar__center">
-                <a href="#" target="_blank" rel="noopener" class="legal-bar__linkedin">
-                    <img src="<?=base_url() ?>html/images/linkedin-b.svg" alt="LinkedIn">
-                </a>
-            </div>
-            <div class="legal-bar__links">
-                <ul id="menu-terms" class="menu">
-                    <li class="menu-item"><a href="#" data-title="Terms of Use" style="font-size: 14px;">Terms of Use</a></li>
-                    <li class="menu-item"><a href="#" data-title="Privacy Policy" style="font-size: 14px;">Privacy Policy</a></li>
-                </ul>
-            </div>
-        </div>
+       <div class="border-t border-gray-200 mt-8 pt-6 pb-8 sm:pb-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500 sa-fade-up sa-delay-2" style="padding-bottom: 2.5rem !important;">
+    <!-- Left Copyright -->
+    <p class="m-0 text-center sm:text-left whitespace-nowrap" style="margin: 0 !important; font-size: 14px !important; line-height: 1.5 !important;">
+        © GK POLYPACK. 2026. All Rights Reserved.
+    </p>
+
+    <!-- Right Links -->
+    <div class="flex items-center gap-4 m-0 p-0" style="margin: 0 !important; font-size: 14px !important;">
+        <a href="#" class="text-gray-500 hover:text-[#d19220] transition-colors whitespace-nowrap no-underline" style="text-decoration: none !important; color: #64748b !important;">
+            Terms of Use
+        </a>
+        <span class="text-gray-300 select-none" style="color: #cbd5e1 !important;">|</span>
+        <a href="#" class="text-gray-500 hover:text-[#d19220] transition-colors whitespace-nowrap no-underline" style="text-decoration: none !important; color: #64748b !important;">
+            Privacy Policy
+        </a>
+    </div>
+</div>
+        
 
         <!-- YouTube Modal -->
         <div class="modal modal--video">
