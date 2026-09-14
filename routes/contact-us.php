@@ -62,7 +62,7 @@
                 <span class="text-sm font-bold uppercase tracking-wider text-gray-400 block mb-2">Manufacturing Plant</span>
                 <h3 class="text-2xl md:text-3xl font-bold text-[#0b2644] mb-4">Factory &amp; HQ</h3>
                 <p class="text-gray-600 text-lg md:text-xl leading-relaxed m-0 font-medium">
-                    Bahader k road Ludhiana Punjab
+                    Bahadarke road Ludhiana Punjab
                 </p>
             </div>
             <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200/80 sa-fade-up sa-delay-4 hover:shadow-xl transition-all duration-300 group">
@@ -164,7 +164,7 @@
 <section class="relative bg-gray-200 border-t border-gray-300">
     <div class="w-full h-[450px] md:h-[550px]">
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112061.35338981206!2d77.10249019999999!3d28.6322964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b715389640!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=bahadarke road ludhiana&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" 
             width="100%" 
             height="100%" 
             style="border:0; filter: grayscale(15%) contrast(1.05);" 

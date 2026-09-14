@@ -86,7 +86,7 @@
                         <a href="#" data-title="Connect" style="font-size: 14px; font-weight: 700; color: #142849; text-transform: uppercase;">Contact Info</a>
                         <div class="site-footer__company-info" style="margin-top: 1rem; color: #142849; font-size: 14px; line-height: 1.6;">
                             <p style="margin: 0 0 0.6rem 0;">
-                                <strong style="color: #d69426;">Address:</strong><br> Plot No. 123, Industrial Area, Phase-I, New Delhi, India
+                                <strong style="color: #d69426;">Address:</strong><br>Bahadarke road Ludhiana Punjab
                             </p>
                             <p style="margin: 0 0 0.6rem 0;">
                                 <strong style="color: #d69426;">Phone:</strong><br>

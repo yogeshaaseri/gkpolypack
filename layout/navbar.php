@@ -1,3 +1,11 @@
+<?php 
+$uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$segment = basename($uri_path, '.php');
+if ($segment == '' || $segment == 'index' || $segment == 'gkpolypack') {
+    $segment = 'home';
+}
+?>
+
 <header class="container relative z-50 font-sans">
     <div class="bg-white border-b border-gray-100">
         <div class="py-6 flex justify-between items-center">
@@ -30,7 +38,7 @@
                 </a>
             </div>
 
-            <!-- Hamburger Button For Mobile (ID added: mobileMenuBtn) -->
+            <!-- Hamburger Button For Mobile -->
             <button id="mobileMenuBtn" aria-label="Open Mobile Menu" class="lg:hidden text-gray-700 hover:text-[#d19220] p-2 rounded-lg transition-colors focus:outline-none cursor-pointer">
                 <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
@@ -42,15 +50,15 @@
         <nav class="bg-[#0b2644] rounded-lg shadow-xl flex justify-between items-center px-12 py-6">
             <ul class="flex items-center space-x-16 text-xl font-bold text-white m-0 p-0 list-none">
                 <li class="list-none">
-                    <a href="<?= base_url()?>" class="text-[#cc8d1d] hover:text-[#cc8d1d] py-2 transition">Home</a>
+                    <a href="<?= base_url()?>" class="<?= ($segment == 'home') ? 'text-[#cc8d1d]' : '' ?> hover:text-[#cc8d1d] py-2 transition">Home</a>
                 </li>
                 <li class="nav-item relative group list-none">
-                    <a href="<?= base_url() ?>about-us" class="flex items-center hover:text-[#cc8d1d] py-2 transition">
+                    <a href="<?= base_url() ?>about-us" class="flex items-center <?= ($segment == 'about-us') ? 'text-[#cc8d1d]' : '' ?> hover:text-[#cc8d1d] py-2 transition">
                         About Us
                     </a>
                 </li>
                 <li class="nav-item relative group list-none">
-                    <a href="<?= base_url() ?>products" class="flex items-center py-2 transition hover:text-[#cc8d1d]">
+                    <a href="<?= base_url() ?>products" class="flex items-center <?= ($segment == 'products') ? 'text-[#cc8d1d]' : '' ?> py-2 transition hover:text-[#cc8d1d]">
                         Products
                         <svg class="w-7 h-7 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
                     </a>
@@ -66,10 +74,10 @@
                     </ul>
                 </li>
                 <li class="list-none">
-                    <a href="<?= base_url() ?>gallery" class="hover:text-[#cc8d1d] py-2 transition">Gallery</a>
+                    <a href="<?= base_url() ?>gallery" class="<?= ($segment == 'gallery') ? 'text-[#cc8d1d]' : '' ?> hover:text-[#cc8d1d] py-2 transition">Gallery</a>
                 </li>
                 <li class="list-none">
-                    <a href="<?= base_url() ?>contact-us" class="hover:text-[#cc8d1d] py-2 transition">Contact Us</a>
+                    <a href="<?= base_url() ?>contact-us" class="<?= ($segment == 'contact-us') ? 'text-[#cc8d1d]' : '' ?> hover:text-[#cc8d1d] py-2 transition">Contact Us</a>
                 </li>
             </ul>
             <a href="tel:+919548000500" class="bg-[#d19220] hover:bg-[#b87c1a] text-white px-10 py-4 rounded-md text-xl font-bold shadow-md transition transform hover:-translate-y-0.5 whitespace-nowrap">
@@ -95,15 +103,15 @@
             <nav class="p-6">
                 <ul class="space-y-4 m-0 p-0 list-none text-lg font-semibold">
                     <li>
-                        <a href="<?= base_url() ?>" class="block py-2 text-[#d19220] hover:text-[#d19220] transition">Home</a>
+                        <a href="<?= base_url() ?>" class="block py-2 <?= ($segment == 'home') ? 'text-[#d19220]' : 'text-white' ?> hover:text-[#d19220] transition">Home</a>
                     </li>
                     <li>
-                        <a href="<?= base_url() ?>about-us" class="block py-2 text-white hover:text-[#d19220] transition">About Us</a>
+                        <a href="<?= base_url() ?>about-us" class="block py-2 <?= ($segment == 'about-us') ? 'text-[#d19220]' : 'text-white' ?> hover:text-[#d19220] transition">About Us</a>
                     </li>
                     
                     <!-- Mobile Dropdown Accordion -->
                     <li class="border-t border-b border-white/10 py-2">
-                        <button id="mobileProductsToggle" class="w-full flex justify-between items-center text-left text-white hover:text-[#d19220] font-semibold py-1 bg-transparent border-none cursor-pointer">
+                        <button id="mobileProductsToggle" class="w-full flex justify-between items-center text-left <?= ($segment == 'products') ? 'text-[#d19220]' : 'text-white' ?> hover:text-[#d19220] font-semibold py-1 bg-transparent border-none cursor-pointer">
                             <span>Products</span>
                             <svg id="productsArrow" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                         </button>
@@ -120,10 +128,10 @@
                     </li>
 
                     <li>
-                        <a href="<?= base_url() ?>gallery" class="block py-2 text-white hover:text-[#d19220] transition">Gallery</a>
+                        <a href="<?= base_url() ?>gallery" class="block py-2 <?= ($segment == 'gallery') ? 'text-[#d19220]' : 'text-white' ?> hover:text-[#d19220] transition">Gallery</a>
                     </li>
                     <li>
-                        <a href="<?= base_url() ?>contact-us" class="block py-2 text-white hover:text-[#d19220] transition">Contact Us</a>
+                        <a href="<?= base_url() ?>contact-us" class="block py-2 <?= ($segment == 'contact-us') ? 'text-[#d19220]' : 'text-white' ?> hover:text-[#d19220] transition">Contact Us</a>
                     </li>
                 </ul>
             </nav>
